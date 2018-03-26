@@ -1,0 +1,9 @@
+{
+  "name": "v-select",
+  "version": "0.0.0",
+  "description": "A select dropdown component for Vue.js 2",
+  "main": "src/index.js",
+  "author": "Daniel Elmalem <delmalem697@gmail.com>",
+  "private": true,
+  "license": "MIT"
+}
