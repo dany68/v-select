@@ -92,4 +92,4 @@ This method can be useful if you want to make optgroup.
 ## Notes
 
 This package doesn't include CSS styles.
-You can either use the [Elements CSS framework](https://github.com/dany68/elements) or simply grab the [select.scss file](https://github.com/dany68/elements/tree/master/sass/form/select.scss) from it.
+You can either use the [Elements CSS framework](https://github.com/dany68/elements) or simply grab the [select.scss file](https://github.com/dany68/elements/blob/master/sass/components/forms/select.scss) from it.
