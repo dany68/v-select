@@ -37,28 +37,59 @@ export default {
 
 ## Usage
 
-On your page you can now use html like this to render the select input box:
+On your page you can now use html like this to render the select dropdown:
 
-```html
-<v-select v-model="selected" :options="['foo','bar']"></v-select>
-
-// OR
-
-<v-select v-model="selected" :options="[{label: 'foo', value: 'f'}, {label: 'Bar', value: 'b'}]"></v-select>
+```HTML
+<v-select v-model="selected" :options="[{value: 'foo', text: 'This is foo', disabled: true }, {value: 'bar', text: 'This is bar'}]"></v-select>
 ```
 
-##### Synchronize the selected value
+The value is synchronized with the `v-model` attribute.
 
-The selected value is synchronize with the parent component via the `v-model` attribute.
 
-##### Option list
+#### Options
 
-The `options` property accept an array of literal strings, or an array of objects containing a `label` and a `value` keys.
+| Prop        | Type   | Default | Required | Description                                            |
+| ----------- |:------:|:-------:|:--------:|:------------------------------------------------------:|
+| name        | String |         | No       | The HTML select name attribute.                         |
+| label       | String |         | No       | If set will add a label. The value will be the label text. |
+| icon        | String |         | No       | Classes of the icon to display (ex: 'fas fa-globe').    |
+| placeholder | String |         | No       | Placeholder text. If set will add a disabled selected option to mimic an input placeholder. |
+| options     | Array  |         | No       | See below.                                              |
 
-##### Name attribute
 
-You can define the `name` attribute of the select input by applying it on the v-select component.
+#### Select dropdown option list
 
-```html
-<v-select name="country" :options="['Israël','US']"></v-select>
+The option list is generated thanks to the v-select `options` prop.
+v-select will look for a `text` and a `value` keys.
+You can also add a boolean `disabled` key to specify if the option should be disabled.
+
+```HTML
+let options = [
+    { value: 'foo', text: 'This is foo' },
+    { value: 'bar', text: 'This is bar' },
+    { value: 'disabled', text: 'This option is disabled', disabled: true },
+];
+
+<v-select v-model="selected" :options="options"></v-select>
 ```
+
+Alternatively you can use the default slot to render the option list.
+This method can be useful if you want to make optgroup.
+
+```HTML
+<v-select v-model="selected" placeholder="Choose a city" icon="fas fa-globe">
+    <optgroup label="US">
+        <option value="PA">Palo Alto</option>
+        <option value="SF">San Fransisco</option>
+    </optgroup>
+    <optgroup label="Europe">
+        <option value="P">Paris</option>
+        <option value="R">Rome</option>
+    </optgroup>
+</v-select>
+```
+
+## Notes
+
+This package doesn't include CSS styles.
+You can either use the [Elements CSS framework](https://github.com/dany68/elements) or simply grab the [select.scss file](https://github.com/dany68/elements/tree/master/sass/form/select.scss) from it.
