@@ -5,7 +5,7 @@
 
         <select :name="name" @change="select">
 
-            <option v-if="placeholder" value="" disabled selected>{{ placeholder }}</option>
+            <option v-if="placeholder" value="" :selected="value == null" disabled>{{ placeholder }}</option>
 
             <slot></slot>
 
