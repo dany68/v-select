@@ -39,7 +39,7 @@ export default {
 
 On your page you can now use html like this to render the select dropdown:
 
-```HTML
+```html
 <v-select v-model="selected" :options="[{value: 'foo', text: 'This is foo', disabled: true }, {value: 'bar', text: 'This is bar'}]"></v-select>
 ```
 
@@ -48,13 +48,13 @@ The value is synchronized with the `v-model` attribute.
 
 #### Options
 
-| Prop        | Type   | Default | Required | Description                                            |
-| ----------- |:------:|:-------:|:--------:|:------------------------------------------------------:|
-| name        | String |         | No       | The HTML select name attribute.                         |
-| label       | String |         | No       | If set will add a label. The value will be the label text. |
-| icon        | String |         | No       | Classes of the icon to display (ex: 'fas fa-globe').    |
+| Prop        | Type   | Default | Required | Description                                                                                 |
+| ----------- | ------ | ------- | -------- | ------------------------------------------------------------------------------------------- |
+| name        | String |         | No       | The select name attribute.                                                                  |
+| label       | String |         | No       | If set will add a label. The value will be the label text.                                  |
+| icon        | String |         | No       | Classes of the icon to display (ex: 'fas fa-globe').                                        |
 | placeholder | String |         | No       | Placeholder text. If set will add a disabled selected option to mimic an input placeholder. |
-| options     | Array  |         | No       | See below.                                              |
+| options     | Array  |         | No       | See below.                                                                                  |
 
 
 #### Select dropdown option list
@@ -63,7 +63,7 @@ The option list is generated thanks to the v-select `options` prop.
 v-select will look for a `text` and a `value` keys.
 You can also add a boolean `disabled` key to specify if the option should be disabled.
 
-```HTML
+```html
 let options = [
     { value: 'foo', text: 'This is foo' },
     { value: 'bar', text: 'This is bar' },
@@ -76,7 +76,7 @@ let options = [
 Alternatively you can use the default slot to render the option list.
 This method can be useful if you want to make optgroup.
 
-```HTML
+```html
 <v-select v-model="selected" placeholder="Choose a city" icon="fas fa-globe">
     <optgroup label="US">
         <option value="PA">Palo Alto</option>
