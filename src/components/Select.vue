@@ -1,4 +1,4 @@
-<template lang="html">
+<template>
     <div class="select" :class="classes">
 
         <i v-if="icon" class="input-icon" :class="icon"></i>
@@ -11,6 +11,7 @@
 
             <option
             v-for="option in options"
+            :key="option.value"
             :value="option.value"
             :selected="option.value == value"
             :disabled="option.disabled"
